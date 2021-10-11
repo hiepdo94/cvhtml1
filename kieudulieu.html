@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kieudulieu</title>
+</head>
+
+<body>
+    <script>
+        let sum = 0
+        var pvatly = parseInt(prompt('Nhập điểm Vật Lý'))
+        var phoahoc = parseInt(prompt('nhập điểm hoá học'))
+        var psinhhoc = parseInt(prompt('nhập điểm sinh học'))
+
+        document.write(`Tổng điểm  của 3 môn học là ${(pvatly + phoahoc + psinhhoc)}`)
+    </script>
+    <br>
+    <script>
+        document.write(`Tổng điểm TB của 3 môn học là ${(pvatly + phoahoc + psinhhoc) / 3}`)
+
+    </script>
+    <br>
+    <script>
+        var tempC = parseFloat(prompt('nhập giá trị độ c'))
+        document.write(` giá trị độ f là ${(9 * tempC) / 5 + 32}`)
+    </script>
+    <br>
+    <script>
+        var pi = Math.PI
+        var r = prompt('nhập giá trị r')
+        document.write(`diện tích hình tròn ${pi * r}`)
+    </script>
+    <br>
+    <script>
+        document.write(`chu vi hình tròn ${r * r * pi}`)
+
+    </script>
+
+</body>
+
+</html>
