@@ -7,13 +7,34 @@
     <title>đổi tiền tệ</title>
 </head>
 <body>
-    <p>Amount</p>
+   <p>Amount</p>
+   <input type="text"id = "dauvao">
+
+    <p>From curency</p>
     <select name="from curency" id="from curency">
-        <option value="vietnam">vietnam</option>
-        <option value="usa">usa</option>
+        <option value="vnd">vnd</option>
+        <option value="usd">usd</option>
         
     </select>
+     <p>To curency</p> 
+     <select name="tocurency" id="tocurency">
+         <option value="usd">usd</option>
+         <option value="vnd">vnd</option>
+     </select>
+     <button onclick="ketqua()">Convert</button>
+     <script>
+         function ketqua() {
+          let dauvao = document.getElementById('dauvao').varlue;
+          let fromcurency = document.getElementById('fromcurency').varlue;
+          let  tocurency = document.getElementById('tocurency').varlue;
+          if ( fromcurency == tocurency){
+              alert(dauvao);
+           if (fromcurency == 'vnd' && tocurency == 'usa') {
+            alert(dauvao/23000);  
+           }
 
+      }
+  </script>
     
      
     
