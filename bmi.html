@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chisobmi</title>
+</head>
+
+<body>
+    <script>
+var height1 = document.getElementById('height');
+var weight1 = document.getElementById('weight');
+var bmi =calculate(height,weight);
+function calculate(height,weight){
+    alert('No calculate');
+}else{
+    height =height/100;
+let bmi = weight/math.pow(height,2)
+return bmi;
+}
+cal.onclick = function result(){
+    var height = height1.value;
+    var weight = weight1.value;
+    var bmi = caculate(heght,weight);
+    if (bmi < 18)
+            document.write("Underweight");
+        else if (bmi < 25.0)
+            document.write("Normal");
+        else if (bmi < 30.0)
+            document.write("Overweight");
+        else
+            document.write("Obese");
+}
+      
+      
+    </script>
+</body>
+
+</html>

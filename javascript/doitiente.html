@@ -1,42 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>đổi tiền tệ</title>
 </head>
+
 <body>
-   <p>Amount</p>
-   <input type="text"id = "dauvao">
-
-    <p>From curency</p>
-    <select name="from curency" id="from curency">
-        <option value="vnd">vnd</option>
-        <option value="usd">usd</option>
-        
+    <input type="text" id="dauvao">
+    <select name="" id="select1">
+        <option value="a">VNĐ</option>
+        <option value="b">USD</option>
     </select>
-     <p>To curency</p> 
-     <select name="tocurency" id="tocurency">
-         <option value="usd">usd</option>
-         <option value="vnd">vnd</option>
-     </select>
-     <button onclick="ketqua()">Convert</button>
-     <script>
-         function ketqua() {
-          let dauvao = document.getElementById('dauvao').varlue;
-          let fromcurency = document.getElementById('fromcurency').varlue;
-          let  tocurency = document.getElementById('tocurency').varlue;
-          if ( fromcurency == tocurency){
-              alert(dauvao);
-           if (fromcurency == 'vnd' && tocurency == 'usa') {
-            alert(dauvao/23000);  
-           }
+    <select name="" id="select2">
+        <option value="a">VNĐ</option>
+        <option value="b">USD</option>
+    </select>
+    <button onclick="ketqua()">convert</button>
 
-      }
-  </script>
+    <script>
+        function ketqua() {
+            let giatrivao = document.getElementById('dauvao').value;
+            let select1 = document.getElementById('select1').value;
+            let select2 = document.getElementById('select2').value;
+            if (select1 == select2) {
+                alert(giatrivao);
+            }
+            if (select1 == "a" && select2 == "b") {
+                alert(giatrivao/23000);
+            }
     
-     
-    
+    }
+</script>
+
 </body>
+
 </html>
