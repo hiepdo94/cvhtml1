@@ -7,24 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>chisobmi</title>
 </head>
-
 <body>
     <script>
-var height1 = document.getElementById('height');
-var weight1 = document.getElementById('weight');
-var bmi =calculate(height,weight);
-function calculate(height,weight){
-    alert('No calculate');
-}else{
-    height =height/100;
-let bmi = weight/math.pow(height,2)
-return bmi;
-}
-cal.onclick = function result(){
-    var height = height1.value;
-    var weight = weight1.value;
-    var bmi = caculate(heght,weight);
-    if (bmi < 18)
+        let height  = prompt('Nhap chieu cao', 0);
+        let weight  = prompt('Nhap can nang', 0);
+        let bmi = weight / ( height ^ 2 );
+
+        if (bmi < 18)
             document.write("Underweight");
         else if (bmi < 25.0)
             document.write("Normal");
@@ -32,9 +21,8 @@ cal.onclick = function result(){
             document.write("Overweight");
         else
             document.write("Obese");
-}
-      
-      
+
+            document.write(bmi);
     </script>
 </body>
 
