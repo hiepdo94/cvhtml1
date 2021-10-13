@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính đơn giản</title>
+    <style>
+        table{ 
+            width: 300px;
+            text-align: center;
+            padding: 10px;
+            border: 2px solid #000;
+            margin : 20px auto;
+        }
+        #Input{
+            width: 290px;
+            height: 35px;
+            margin: 5px;
+            font-weight: bold;
+            color: #000;
+            font-size: 24px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+            text-align: right;
+        }
+        input[type="button"]{
+            width: 50px;
+            height: 35px;
+            margin: 5px;
+            font-weight: bold;
+            color: blue;
+            font-size: 24px;
+            border: 2px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        input[type="button"]:hover{
+            background-color: #c1c1c1;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" name="" id="Input" disabled>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="1">
+            </td>
+            <td>
+                <input type="button" value="2">
+            </td>
+            <td>
+                <input type="button" value="3">
+            </td>
+            <td>
+                <input type="button" value="+">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="4">
+            </td>
+            <td>
+                <input type="button" value="5">
+            </td>
+            <td>
+                <input type="button" value="6">
+            </td>
+            <td>
+                <input type="button" value="-">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="7">
+            </td>
+            <td>
+                <input type="button" value="8">
+            </td>
+            <td>
+                <input type="button" value="9">
+            </td>
+            <td>
+                <input type="button" value="x">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="button" value="C">
+            </td>
+            <td>
+                <input type="button" value="0">
+            </td>
+            <td>
+                <input type="button" value="=">
+            </td>
+            <td>
+                <input type="button" value="/">
+            </td>
+        </tr>
+    </table>
+</body>
+<script>
+    simpleCalculator();
+    function simpleCalculator(){
+        let btnsGroup = document.querySelectorAll('input[type="button"]');
+        let Input = document.getElementById('Input');
+        let arrNumbers = [0,1,2,3,4,5,6,7,8,9];
+        let arrChars = ['C','+','-','x','/','='];
+        
+        for (let i = 0; i < btnsGroup.length; i++) {
+            btnsGroup[i].addEventListener('click', () => {
+
+                btnValueChar = btnsGroup[i].value;
+                if(arrChars.includes(btnValueChar)){
+                    if(btnValueChar == 'C'){
+                        Input.value = '';
+                    }else{
+                        if(
+                            Number.isInteger(Input.value.substr(Input.value.length - 2))
+                        ){
+                            Input.value += btnValueChar;
+                        }
+                    }
+                }
+
+                btnValueInt = parseInt(btnsGroup[i].value);
+                if(arrNumbers.includes(btnValueInt)){
+                    Input.value += btnValueInt;
+                }
+
+            });
+        }
+    }
+</script>
+</html>
