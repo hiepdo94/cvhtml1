@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>so nguyen to</title>
+</head>
+<body>
+    <script>
+        let number=2;
+        let count=0;
+        let n=prompt('nhập số nguyên tố muốn in ra');
+        let result="";
+        function checkPrimeNumbers(n) {
+            if (n<2) {
+                return false;
+                
+            } else if(n==2) {
+                return true;
+                
+            } else if(n % 2== 0 ){
+                return false;
+            }
+            else { 
+                for (var i = 3; i < Math.sqrt(n); i+=2)
+                {
+                    if (n % i == 0){
+                        return false;
+                        break;
+
+    </script>
+</body>
+</html>
