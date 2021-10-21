@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kiemtrasonguyento</title>
+</head>
+<body>
+    <script>
+        function isprime(number){
+            var flag= true;
+            if (n<2) {
+                flag = false;
+            } else if (n==2) {
+                flag = true;
+            } else if (n % 2 == 0){
+                flag = false;
+            } else{
+                for (var i=3;i<math.sqrt(n);i+=2){
+                    if(n % i ==0) {
+                        flag = false;
+                        break;
+                    }
+                }
+            }
+            if (flag == true){
+                document.write(n + "là số nguyên tố <br/>");
+            }else{
+                document.write(n + "không phải là số nguyên tố <br/>");
+            }
+        }
+    </script>
+</body>
+</html>
