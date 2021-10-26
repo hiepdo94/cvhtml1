@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>funny</title>
+</head>
+<body style="text-align: center;background-color: #000;">
+    <canvas id="myCanvas" width="800" height="500" style="border:1px solid #d3d3d3;"></canvas>
+<body>
+    <script>
+ const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        let frame = 0;
+        const arrCircles = [];
+
+        class Circle {
+            constructor(x = 0, y = 0, radius = 0){
+                // this.x = x;
+                // this.y = y;
+                this.x = Math.random() * window.innerWidth;
+                this.y = Math.random() * window.innerHeight;
+                this.radius = radius;
+            }
+            createCircle(){
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
+                ctx.fill();
+            }
+            getRandomHex(){
+                return Math.floor(Math.random() * 255);
+            }
+            getRandomColor(){
+                let red = this.getRandomHex();
+                let green = this.getRandomHex();
+                let blue = this.getRandomHex();
+
+                return `rgb(${red}, ${green}, ${blue})`;
+            }
+            createRandomColorCircle(){
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+                ctx.fillStyle = this.getRandomColor();
+                ctx.fill();
+            }
+            createRandomColorRandomXYCircle(){
+                let x = Math.random() * window.innerWidth;
+                let y = Math.random() * window.innerHeight;
+                ctx.beginPath();
+                ctx.arc(x, y, this.radius, 0, 2*Math.PI);
+                ctx.fillStyle = this.getRandomColor();
+                ctx.fill();
+            }
+            createMultipleCircle(){ 
+                for (let i = 0; i < 30; i++) {
+                    this.createRandomColorRandomXYCircle();
+                }
+            }
+
+            //for move
+            update(){
+                this.x -= Math.random() * 0.2 + 2;//speed here
+            }
+            draw(){      
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, 2*Math.PI);
+                ctx.fillStyle = this.getRandomColor();
+                ctx.fill();
+            }
+        }
+
+        // Yêu cầu bổ sung: Thêm hiệu ứng di chuyển cho các hình tròn.
+        function handleMoveCircles() {
+            for (let i = 0; i < arrCircles.length; i++) {
+                arrCircles[i].update();
+                arrCircles[i].draw();
+            }
+            // console.log(frame);
+            if(frame % 20 === 0){
+                arrCircles.push(new Circle(0,0, 80));
+            }
+        }
+
+        // Vẽ một hình tròn đơn giản với kích thước cố định
+        // let circle = new Circle(400, 250, 80);
+        // circle.createCircle();
+
+        // Vẽ hình tròn với bán kính ngẫu nhiên
+        // let randomRadius = Math.floor(Math.random() * 80);
+        // let circle = new Circle(400, 250, randomRadius);
+        // circle.createCircle();
+
+        //Vẽ hình tròn với màu ngẫu nhiên
+        // let circle = new Circle(400, 250, 80);
+        // circle.createRandomColorCircle();
+
+        //Vẽ hình tròn với X Y ngẫu nhiên
+        // let x = Math.random() * window.innerWidth;
+        // let y = Math.random() * window.innerHeight;
+        // let circle = new Circle(x, y, 80);
+        // circle.createRandomColorCircle();
+
+        //Vẽ 2 hình tròn với X Y ngẫu nhiên
+        // let x1 = Math.random() * window.innerWidth;
+        // let y1 = Math.random() * window.innerHeight;
+        // let x2 = Math.random() * window.innerWidth;
+        // let y2 = Math.random() * window.innerHeight;
+        // let circle1 = new Circle(x1, y1, 80);
+        // circle1.createRandomColorCircle();
+        // let circle2 = new Circle(x2, y2, 80);
+        // circle2.createRandomColorCircle();
+
+        //Tạo rất nhiều hình tròn.
+        // let circle = new Circle(0, 0, 80);
+        // circle.moveCircles();
+
+        //animate loop
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            frame++;
+            handleMoveCircles();
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
+</body>
+
+</html>
