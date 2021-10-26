@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loptemperture</title>
+</head>
+<body>
+    <script>
+        class Temperature{
+            constructor(C,F,Kenvin){
+                this.C = C
+                this.F = F
+                this.Kenvin = Kenvin
+            }
+           celFahrenheit(){
+               return 9/5 * this.C + 32
+           }
+           celKenvin(){
+               return this.C + 273.15
+           }
+        }
+        let Tem = new Temperature(25,20,30);
+        let celFahrenheit = Tem.celFahrenheit();
+        let celKenvin = Tem.celKenvin();
+        console.log(celFahrenheit);
+        console.log(celKenvin);
+    </script>
+</body>
+</html>
