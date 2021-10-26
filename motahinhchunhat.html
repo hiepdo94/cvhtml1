@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>motahinhchunhat</title>
+</head>
+
+<body>
+
+    <canvas id="myCanvas" width="200px" height="100px" style="border:1px solid #000;"> </canvas>
+    <p id="rec"></p>
+    <script>
+        class Rectangle {
+            constructor(width, height) {
+                this.width = width;
+                this.height = height;
+            }
+            calArea() {
+                return this.width * this.height
+            }
+            calPerimerer() {
+                return 2 * (this.width + this.height)
+            } 
+        }
+            let HCN = new Rectangle(10, 5);
+            let HCNarea = HCN.calArea();
+           let calPerimerer = HCN.calPerimerer();
+
+        console.log(HCNarea);
+        console.log(calPerimerer);
+     
+
+
+    </script>
+
+</body>
+
+</html>
