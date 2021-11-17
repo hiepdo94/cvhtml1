@@ -5,28 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Change color RGBA by range fields</title>
-    <style>
-        #Wrapper{
-            width: 600px;
-            margin: 0 auto;
-            text-align: center;
-            height: 300px;
-            position: relative;
-        }
-        #btnsGroup{
-            width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        #contentShow{
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-        }
-    </style>
+   <link rel="stylesheet" href="color.css">
 </head>
 <body>
     <div id="Wrapper" style="background-color: rgba(255, 93, 244, 0.7);">
@@ -63,30 +42,5 @@
         </table>
     </div>
 </body>
-<script>
-    function changeColor(){
-        //get values of range fields
-        let redField = document.getElementById('range_1').value;
-        let greenField = document.getElementById('range_2').value;
-        let blueField = document.getElementById('range_3').value;
-        let alphaField = document.getElementById('range_4').value / 10;
-
-        //Value's Elements
-        let redValue = document.getElementById('redValue');
-        let greenValue = document.getElementById('greenValue');
-        let blueValue = document.getElementById('blueValue');
-        let alphaValue = document.getElementById('alphaValue');
-
-        //set Values for Text
-        redValue.innerText = redField;
-        greenValue.innerText = greenField;
-        blueValue.innerText = blueField;
-        alphaValue.innerText = alphaField;
-
-        //set value RGBA for Wrapper
-        document.getElementById('Wrapper').style.backgroundColor = `rgba(${redField}, ${greenField}, ${blueField}, ${alphaField})`;
-    }
-    
-
-</script>
+ <script src="color.js"></script>
 </html>

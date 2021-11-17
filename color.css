@@ -1,0 +1,21 @@
+
+#Wrapper{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    height: 300px;
+    position: relative;
+}
+#btnsGroup{
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+#contentShow{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
