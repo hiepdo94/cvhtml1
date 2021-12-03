@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bai4</title>
+</head>
+<body>
+    <script> 
+        class Animal {
+            constructor(name, weight){
+                this.name = name;
+                this.weight = weight;
+            }
+            setName(newName){
+                this.name = newName;
+            }
+            setWeight(newWeight){
+                this.weight = newWeight;
+            }
+            getName(){
+                return this.name;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            toString(){
+                return `Tên nó là ${this.getName()} cân nặng của nó là ${this.getWeight()}`;
+            }
+        }
+    </script>
+
+    <b>Câu 4-2:</b> <p>Sử dụng lớp Animal vừa định nghĩa để xây dựng một chương trình JS với kịch bản</p>
+    <br>
+    <script>
+        //tạo đối tượng có tên là objAnimal1 + đặt tên cho đối tượng 1 là 'Elephant' + cân nặng 45.6
+        const objAnimal1 = new Animal('Elephant', 45.6);
+
+        //Gọi phương thức toString()
+        console.log(objAnimal1.toString());
+
+        //Tạo đối tượng 2
+        const objAnimal2 = new Animal('Cat', 23);
+
+        //Đổi tên cho đối tượng 2 thành 'Mouse'
+        objAnimal2.setName('Mouse');
+        console.log(objAnimal2)
+    
+    </script>
+</body>
+</html>

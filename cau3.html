@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cau3</title>
+</head>
+
+<body>
+    <script>
+        // viết hàm đếm số kí tự nguyên âm trong 1 chuỗi cho trước 
+        let count = prompt("Nhập vào một chuỗi bất kỳ");
+        if (count.length > 0) {
+            let stringToArray = Array.from(str.toLowerCase());
+            let result = lettersAreVowels(stringToArray);
+            //hàm trả về fasle nếu không có kí tự tự nguyên âm nào
+            if (result) {
+                document.write("Số ký tự nguyên âm: ", result[0]);
+                document.write("Ký tự nguyên âm trong chuỗi:" ,result[1]);
+            } else {
+                document.write('không tìm thấy kí tự nguyên âm nào');
+            }
+
+        } else {
+            documen.write('vui lòng nhập chuỗi');
+        }
+
+    </script>
+
+</body>
+
+</html>
